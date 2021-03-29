@@ -30,5 +30,7 @@ Lastly, `fs.writeFile` is used to generate your project's README file.
 MIT License
 
 ## Contact
+
 GitHub: https://github.com/LyleKilson
+
 Email: kylwlsn@gmail.com
