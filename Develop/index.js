@@ -1,7 +1,8 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 const util = require("util");
+// Reference: https://www.npmjs.com/package/util.promisify
 const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
@@ -58,10 +59,11 @@ const promptUser = () => {
       message: "Choose a license",
       name: "license",
       choices: [
-        "Apache 2.0 License",
-        "Boost Software License 1.0",
-        "BSD 3-Clause License",
-        "BSD 2-Clause License",
+        "afl-3.0",
+        "apache-2.0",
+        "artistic-2.0",
+        "bsl-1.0",
+        "bsd-2-clause",
       ],
     },
     {
@@ -92,10 +94,9 @@ generateReadme = (answers) => {
 2. [Installation Instructions](#installation-instructions)
 3. [Usage Information](#usage-information)
 4. [Contributor Guidelines](#contributor-guidelines)
-5. [Code of Conduct](#code-of-conduct)
-6. [Test Instructions](#test-instructions)
-7. [License](#license)
-8. [Questions](#questions)
+5. [Test Instructions](#test-instructions)
+6. [License](#license)
+7. [Questions](#questions)
 
 ## Project Description
 * ${answers.description}
@@ -119,8 +120,12 @@ generateReadme = (answers) => {
 * licensed under the ${answers.license}
 
 ## Questions
-* For additional help or questions about collaboration, please reach out to ${answers.email}
-* Follow me on Github at [${answers.github}](http://github.com/${answers.github})`;
+* For additional help or questions about collaboration, please reach out to ${
+    answers.email
+  }
+* Follow me on Github at [${answers.github}](http://github.com/${
+    answers.github
+  })`;
 };
 
 promptUser()
@@ -129,7 +134,7 @@ promptUser()
     return writeFileAsync("README.md", readme);
   })
   .then(function () {
-    console.log("Your README.md has been created!");
+    console.log("Success! Your README.md file has been created!");
   })
   .catch((err) => {
     console.log(err);
