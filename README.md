@@ -24,8 +24,6 @@ To generate a new README.md file, first run `npm install` in order to install th
 
 ## Usage 
 
-<iframe src="https://drive.google.com/file/d/14CVE7YS8-ByyFdYC5HzAQ3OAVrLoAZz4/preview" width="640" height="480"></iframe>
-
 When running `node index.js`, the application uses the `inquirer` package to prompt a series of questions about the users project.
 
 The application then will generate markdown and a table of contents for the README.md file based on the users responses to the Inquirer prompts.
